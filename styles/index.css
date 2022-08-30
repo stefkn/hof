@@ -3,3 +3,10 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Recoleta Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Recoleta Medium'), url('/RecoletaMedium.otf') format('woff');
+}
