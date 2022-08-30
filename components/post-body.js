@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react'
 export default function PostBody({ content }) {
   return (
     <div className={`max-w-2xl mx-auto ${markdownStyles.markdown}`}>
-      <PortableText value={content} />
+      {content && <PortableText value={content} />}
     </div>
   )
 }
