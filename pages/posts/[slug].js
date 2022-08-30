@@ -61,7 +61,7 @@ export default function Post({ data = {}, preview }) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              {post.content && <PostBody content={post.content} />}
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
