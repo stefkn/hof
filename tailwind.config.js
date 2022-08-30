@@ -12,6 +12,10 @@ module.exports = {
         success: '#0070f3',
         cyan: '#79FFE1',
       },
+      fontFamily: {
+        sans: ['Graphik', 'sans-serif'],
+        serif: ['Recoleta Medium', 'serif'],
+      },
       spacing: {
         28: '7rem',
       },
