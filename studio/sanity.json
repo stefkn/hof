@@ -1,7 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "Blog"
+    "name": "house-of-focus"
+  },
+  "api": {
+    "projectId": "3i4cp6do",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
