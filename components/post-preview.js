@@ -16,12 +16,12 @@ export default function PostPreview({
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
-      <h3 className="mb-3 text-3xl leading-snug">
+      <h3 className="mb-3 text-3xl leading-snug font-serif">
         <Link href={`/posts/${slug}`}>
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
-      <div className="mb-4 text-lg">
+      <div className="mb-4 text-lg font-serif">
         <Date dateString={date} />
       </div>
       <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
