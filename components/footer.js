@@ -1,5 +1,5 @@
 import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -7,10 +7,12 @@ export default function Footer() {
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
         <h2 className="mb-10 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif text-white">
-          house of focus
+          <Link href="/">
+            <a className="hover:underline">house of focus</a>
+          </Link>
         </h2>
         <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/ text-white">
-          Fighting against a world of distraction.
+          a peaceful oasis in a world of distraction.
         </div>
         </div>
       </Container>
