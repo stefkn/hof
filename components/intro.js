@@ -6,11 +6,8 @@ export default function Intro() {
       <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 font-serif">
         house of focus
       </h1>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8 font-sans">
-        Distraction is everywhere.
-      </h4>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8 font-sans">
-        House of Focus is here.
+      <h4 className="text-right md:text-right text-lg mt-5 md:pl-8 font-sans">
+        Live right in your mind.
       </h4>
     </section>
   )
