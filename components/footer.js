@@ -12,7 +12,7 @@ export default function Footer() {
           </Link>
         </h2>
         <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/ text-white">
-          a peaceful oasis in a world of distraction.
+          your oasis in a world of distraction.
         </div>
         </div>
       </Container>
