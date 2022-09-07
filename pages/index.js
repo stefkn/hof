@@ -20,7 +20,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>House of Focus</title>
+          <title>house of focus</title>
         </Head>
         <Container>
           <Intro />
