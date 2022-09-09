@@ -44,11 +44,11 @@ export default function CountdownApp() {
         Pomodoro Timer
       </h2>
       <div class="flex-initial basis-0">
-        <div class="text-7xl font-serif text-center">
+        <h2 class="text-7xl font-serif text-center">
             {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
             {twoDigits(secondsToDisplay)}
-        </div>
-        <div class="text-xl text-right font-bold w-80 mx-auto pr-2 mb-2 font-serif">{status}</div>
+        </h2>
+        <h2 class="text-xl text-right font-bold w-80 mx-auto pr-2 mb-2 font-serif">{status}</h2>
       </div>
       <div class="w-80 mx-auto text-center">
         <button onClick={handleStart} type="button" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg">
