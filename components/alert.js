@@ -11,7 +11,7 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
+        <div className="py-0 text-center text-sm">
           {preview && (
             <>
               This page is a preview.{' '}
