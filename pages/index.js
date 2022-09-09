@@ -3,19 +3,11 @@ import Container from '../components/container'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Link from 'next/link'
-import { indexQuery } from '../lib/queries'
-import { usePreviewSubscription } from '../lib/sanity'
-import { getClient, overlayDrafts } from '../lib/sanity.server'
 
-export default function Index({ allPosts: initialAllPosts, preview }) {
-  const { data: allPosts } = usePreviewSubscription(indexQuery, {
-    initialData: initialAllPosts,
-    enabled: preview,
-  })
-  const [heroPost, ...morePosts] = allPosts || []
+export default function Index() {
   return (
     <>
-      <Layout preview={preview}>
+      <Layout>
         <Head>
           <title>house of focus</title>
         </Head>
