@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-accent-1 border-t border-accent-2 bg-slate-900">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
-        <h2 className="mb-10 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif text-white">
+        <h2 className="no-text-shadow mb-10 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif text-white">
           <Link href="/">
             <a className="hover:underline">house of focus</a>
           </Link>
