@@ -52,9 +52,7 @@ h1,h2,h3,h4,h5,h6,p {
     }
 }
 
-
-/* CSS */
-.button-67 {
+.index-button {
   align-items: center;
   background: rgb(156 181 255 / 21%);
   border: 0;
@@ -82,7 +80,7 @@ h1,h2,h3,h4,h5,h6,p {
   backdrop-filter: blur(6px);
 }
 
-.button-67:hover {
+.index-button:hover {
   background: #f8f8ff85;
   box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
   color: #392dae;
