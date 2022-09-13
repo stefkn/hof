@@ -40,17 +40,17 @@ export default function CountdownApp() {
   )
   return (
     <div className="mb-8">
-      <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif">
+      <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif -z-1">
         Pomodoro Timer
       </h2>
-      <div class="flex-initial basis-0">
+      <div class="flex-initial basis-0 z-1 relative">
         <h2 class="text-7xl font-serif text-center">
             {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
             {twoDigits(secondsToDisplay)}
         </h2>
         <h2 class="text-xl text-right font-bold w-80 mx-auto pr-2 mb-2 font-serif">{status}</h2>
       </div>
-      <div class="w-80 mx-auto text-center">
+      <div class="w-80 mx-auto text-center z-1 relative">
         <button onClick={handleStart} type="button" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg">
             start
         </button>
