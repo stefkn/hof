@@ -53,36 +53,35 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .index-button {
-  align-items: center;
-  background: rgb(156 181 255 / 21%);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
-  box-sizing: border-box;
-  color: #2a1f62;
-  cursor: pointer;
-  display: flex;
-  font-family: "Recoleta Medium";
-  font-size: 3.5rem;
-  justify-content: center;
-  line-height: 1.5rem;
-  padding: 3rem 6rem 3rem 6rem;
-  position: relative;
-  transition: .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: pre;
-  word-break: normal;
-  word-spacing: normal;
-  margin: 2rem auto;
-  max-width: 20rem;
-  backdrop-filter: blur(6px);
+    align-items: center;
+    background: linear-gradient(45deg, rgb(33 199 184 / 50%), #daffaf38);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+    box-sizing: border-box;
+    color: #2a1f62;
+    cursor: pointer;
+    display: flex;
+    font-family: "Recoleta Medium";
+    font-size: 3.5rem;
+    justify-content: center;
+    line-height: 1.5rem;
+    padding: 3rem 6rem 3rem 6rem;
+    position: relative;
+    transition: .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    margin: 2rem auto;
+    max-width: 20rem;
+    backdrop-filter: blur(6px);
 }
 
 .index-button:hover {
-  background: #f8f8ff85;
-  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
-  color: #392dae;
+    background: #f8f8ff85;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+    color: #392dae;
 }
-
