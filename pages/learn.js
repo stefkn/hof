@@ -4,11 +4,10 @@ import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import CountdownApp from '../components/countdown'
-import { CMS_NAME } from '../lib/constants'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import BackgroundImage from '../components/bg-image'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -22,8 +21,22 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Head>
           <title>house of focus</title>
         </Head>
+        <BackgroundImage />
         <Container>
           <Intro />
+
+          <div className="mb-10">
+            <p>
+              Welcome to <b>house of focus.</b>
+            </p>
+            <p>
+              This is where you will find articles by house of focus staff and guest contributors.
+            </p>
+            <b>
+              For those who Do.
+            </b>
+          </div>
+
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -35,7 +48,6 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <div className="background-image absolute mx-auto z-0 -inset-0"></div>
         </Container>
       </Layout>
     </>
