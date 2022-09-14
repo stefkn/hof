@@ -18,11 +18,10 @@ body {
 * {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    z-index: 1;
 }
 
 h1,h2,h3,h4,h5,h6,p {
-    text-shadow: 1px 1px 17px white, 1px 1px 16px white, 0 0 15px white;
+    text-shadow: 1px 1px 20px white, 1px 1px 20px white, 0 0 20px white, 0 0 15px white;
 }
 
 .background-image {
