@@ -65,8 +65,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="text-xs absolute bottom-px">
-            {/* Photo by <a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Evie S.</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
+          <div className="text-xs absolute bottom-0 left-2/4 text-slate-500 -rotate-90 relative">
             Photo by <a href="https://unsplash.com/@anniespratt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Annie Spratt</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
           </div>
         </Container>
