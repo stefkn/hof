@@ -12,7 +12,20 @@ export default function Index() {
           <title>house of focus</title>
         </Head>
         <Container>
+
           <Intro />
+
+          <div className="z-1 relative">
+            <p>
+              Welcome to <b>house of focus.</b>
+            </p>
+            <p>
+              We collect, curate and build things for enhancing focus, flow and productivity.
+            </p>
+            <b>
+              For those who Do.
+            </b>
+          </div>
 
           <div className="goal-selector flex-wrap self-center object-center relative">
             <div className="goal m-auto w-40 text-center">
