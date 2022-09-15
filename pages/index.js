@@ -50,7 +50,19 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="background-image absolute mx-auto z-0 -inset-0">
+          <div className="mt-20 z-1 relative max-w-md backdrop-blur-md backdrop-brightness-105 p-4 rounded-xl border md:m-auto md:max-w-3xl md:mt-32 md:float-right">
+            <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif">
+              About
+            </h2>
+            <p className='mt-6'>
+              house of focus is an online collective dedicated to enhancing mental performance.
+            </p>
+            <p className='mt-6'>
+              We go about our mission using a variety of means; audio, music, techniques, gadgets, "lifehacks", supplements and more. We stay on top of the current scientific literature and the latest behavioural psychology to bring you evidence-based methods of sustaining higher levels of focus, for longer.
+            </p>
+            <p className='mt-6'>
+              We began our search in 2020, and decided to create a place where we could share and expand our knowledge publicly, and to build a community for those who want to do great work, and seek refuge from distraction, interruption and disturbance.
+            </p>
           </div>
 
           <div className="text-xs absolute bottom-px">
