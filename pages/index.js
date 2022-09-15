@@ -28,26 +28,25 @@ export default function Index() {
           </div>
 
           <div className="goal-selector flex-wrap self-center object-center relative">
-            <div className="goal m-auto w-40 text-center">
-              <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif my-20">
-                <Link href={`/focus`}>
-                  <a className="hover:underline text-shadow">focus</a>
-                </Link>
-              </h2>
+
+            <div className="goal m-auto text-center">
+              <Link href={`/focus`}>
+                <a class="index-button">
+                  focus
+                </a>
+              </Link>
             </div>
-            <div className="goal m-auto w-40 text-center">
-              <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif my-20">
-                <Link href={`/learn`}>
-                  <a className="hover:underline text-shadow">learn</a>
-                </Link>
-              </h2>
+            <div className="goal m-auto text-center">
+              <Link href={`/learn`}>
+                <a class="index-button">
+                  learn
+                </a>
+              </Link>
             </div>
-            <div className="goal m-auto w-40 text-center">
-              <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif my-20">
-                <Link href={`/shop`}>
-                  <a className="hover:underline text-shadow">shop</a>
-                </Link>
-              </h2>
+            <div className="goal m-auto text-center">
+              <a class="index-button">
+                shop
+              </a>
             </div>
           </div>
 
