@@ -3,6 +3,7 @@ import Container from '../components/container'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Link from 'next/link'
+import BackgroundImage from '../components/bg-image'
 
 export default function Index() {
   return (
@@ -11,6 +12,7 @@ export default function Index() {
         <Head>
           <title>house of focus</title>
         </Head>
+        <BackgroundImage />
         <Container>
 
           <Intro />
