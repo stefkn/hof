@@ -29,8 +29,7 @@ export default function Index() {
             </b>
           </div>
 
-          <div className="goal-selector flex-wrap self-center object-center relative">
-
+          <div className="goal-selector flex-wrap self-center object-center relative z-[2]">
             <div className="goal m-auto text-center">
               <Link href={`/focus`}>
                 <a class="index-button">
@@ -52,8 +51,17 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="mt-20 z-1 relative max-w-md backdrop-blur-md backdrop-brightness-105 p-4 rounded-xl border md:m-auto md:max-w-3xl md:mt-32 md:float-right">
-            <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif">
+          <div className="mt-20 z-[2] relative max-w-md backdrop-blur-md backdrop-brightness-95 p-4 rounded-xl border md:m-auto md:max-w-3xl md:mt-32 md:float-right">
+            <h2 className="
+              text-2xl
+              font-serif
+              font-bold
+              tracking-tighter
+              leading-tight
+
+              md:text-4xl
+              md:pr-8
+            ">
               About
             </h2>
             <p className='mt-6'>
