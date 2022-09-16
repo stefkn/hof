@@ -12,23 +12,23 @@ export default function HeroPost({
   slug,
 }) {
   return (
-    <section className="z-1">
-      <div className="mb-8 md:mb-16 z-1">
+    <section className="z-[2]">
+      <div className="mb-8 md:mb-16 z-[2]">
         <CoverImage slug={slug} title={title} image={coverImage} priority />
       </div>
-      <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28 z-1 relative">
-        <div>
-          <h3 className="mb-4 text-4xl leading-tight lg:text-6xl font-serif z-1 relative">
+      <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28 z-[2] relative">
+        <div className="z-[2] relative">
+          <h3 className="mb-4 text-4xl leading-tight lg:text-6xl font-serif">
             <Link href={`/posts/${slug}`}>
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
-          <div className="mb-4 text-lg md:mb-0 z-1 relative">
+          <div className="mb-4 text-lg md:mb-0 z-[2] relative">
             <Date dateString={date} />
           </div>
         </div>
         <div>
-          <p className="mb-4 text-lg leading-relaxed z-1 relative">{excerpt}</p>
+          <p className="mb-4 text-lg leading-relaxed z-[2] relative">{excerpt}</p>
           {author && <Avatar name={author.name} picture={author.picture} />}
         </div>
       </div>
