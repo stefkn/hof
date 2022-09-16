@@ -13,6 +13,7 @@
 
 body {
     background-color: #f3f3f3;
+    padding-top: 2rem;
 }
 
 * {
@@ -77,6 +78,7 @@ h1,h2,h3,h4,h5,h6,p {
     margin: 2rem auto;
     max-width: 20rem;
     backdrop-filter: blur(6px);
+    transform: skewY(6deg);
 }
 
 .index-button:hover {
