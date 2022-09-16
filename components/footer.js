@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-accent-2">
+    <footer>
       <Container>
-        <div className="mt-96 ml-1/2 flex flex-col lg:flex-row items-center absolute z-2">
+        <div className="mt-96 ml-1/2 flex flex-col lg:flex-row items-center absolute z-[1]">
           <h2 className="no-text-shadow mb-10 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif text-white">
             <Link href="/">
               <a className="hover:text-teal-500">house of focus</a>
@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
         </div>
       </Container>
-      <div className="bg-slate-900 w-full h-screen z-[-1] relative"></div>
+      <div className="bg-slate-900 w-full h-screen z-1 relative"></div>
     </footer>
   )
 }
