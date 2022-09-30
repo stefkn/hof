@@ -7,7 +7,6 @@ import Layout from '../components/layout'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
-import BackgroundImage from '../components/bg-image'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -21,7 +20,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Head>
           <title>house of focus</title>
         </Head>
-        <BackgroundImage />
+
         <Container>
           <Intro />
 
