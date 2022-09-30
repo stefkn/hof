@@ -9,7 +9,7 @@ import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import BackgroundImage from '../../components/bg-image'
+
 import { CMS_NAME } from '../../lib/constants'
 import { postQuery, postSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
@@ -33,7 +33,7 @@ export default function Post({ data = {}, preview }) {
 
   return (
     <Layout preview={preview}>
-      <BackgroundImage />
+
       <Container>
         <Header />
         {router.isFallback ? (
