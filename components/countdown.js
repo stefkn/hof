@@ -19,10 +19,14 @@ export default function CountdownApp() {
 
   const handleStart = () => {
     setStatus(STATUS.STARTED)
+    document.getElementById('bg-image').style.opacity = 0.5
   }
+
   const handleStop = () => {
     setStatus(STATUS.STOPPED)
+    document.getElementById('bg-image').style.opacity = 1
   }
+
   const handleReset = () => {
     setStatus(STATUS.STOPPED)
     setSecondsRemaining(INITIAL_COUNT)
