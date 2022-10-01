@@ -31,13 +31,18 @@ export default function CountdownApp() {
   const handleReset = () => {
     setStatus(STATUS.STOPPED)
     setSecondsRemaining(INITIAL_COUNT)
+    setpercentageElapsed(0)
   }
+
   useInterval(
     () => {
       if (secondsRemaining > 0) {
         setSecondsRemaining(secondsRemaining - 1)
+        setpercentageElapsed(((INITIAL_COUNT - secondsRemaining) / INITIAL_COUNT) * 100)
       } else {
         setStatus(STATUS.STOPPED)
+        setpercentageElapsed(100)
+        document.getElementById('bg-image').style.opacity = 1
       }
     },
     status === STATUS.STARTED ? 1000 : null,
