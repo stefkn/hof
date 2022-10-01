@@ -11,6 +11,7 @@ const INITIAL_COUNT = 1500
 export default function CountdownApp() {
   const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT)
   const [status, setStatus] = useState(STATUS.STOPPED)
+  const [percentageElapsed, setpercentageElapsed] = useState(0)
 
   const secondsToDisplay = secondsRemaining % 60
   const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60
