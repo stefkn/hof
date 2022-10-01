@@ -56,6 +56,10 @@ export default function CountdownApp() {
         <div class="h-6 bg-green-600 rounded-full dark:bg-green-500 shadow-md"
         style={{width: percentageElapsed + '%'}}></div>
       </div>
+
+      <div class="flex-initial basis-0 z-10 relative">
+        <h2 class="text-7xl font-monospace text-center">
+            {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}'
             {twoDigits(secondsToDisplay)}
         </h2>
         <h2 class="text-xl text-right font-bold w-80 mx-auto pr-2 mb-2 font-serif">{status}</h2>
