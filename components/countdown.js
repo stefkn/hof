@@ -48,14 +48,14 @@ export default function CountdownApp() {
     status === STATUS.STARTED ? 1000 : null,
     // passing null stops the interval
   )
+
   return (
     <div className="mb-8">
-      <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif -z-1">
-        Pomodoro Timer
-      </h2>
-      <div class="flex-initial basis-0 z-1 relative">
-        <h2 class="text-7xl font-serif text-center">
-            {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
+
+      <div class="z-10 relative w-full h-6 bg-gray-200 rounded-full dark:bg-gray-700 shadow-md overflow-hidden">
+        <div class="h-6 bg-green-600 rounded-full dark:bg-green-500 shadow-md"
+        style={{width: percentageElapsed + '%'}}></div>
+      </div>
             {twoDigits(secondsToDisplay)}
         </h2>
         <h2 class="text-xl text-right font-bold w-80 mx-auto pr-2 mb-2 font-serif">{status}</h2>
