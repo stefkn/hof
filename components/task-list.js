@@ -34,7 +34,8 @@ function Task({ task, onChange, onDelete }) {
               text: e.target.value
             });
           }} />
-        <button onClick={() => setIsEditing(false)}>
+        <button onClick={() => setIsEditing(false)}
+        class="h-8 mx-1 text-white bg-blue-400 border-0 py-1 px-3 focus:outline-none hover:bg-blue-500 rounded text-lg shadow-lg">
           Save
         </button>
       </>
