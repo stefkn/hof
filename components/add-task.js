@@ -8,7 +8,7 @@ export default function AddTask({ onAddTask }) {
         placeholder="Describe a task here"
         value={text}
         onChange={e => setText(e.target.value)}
-        class="flex-grow mr-2 p-2"
+        class="flex-grow mr-2 p-2 rounded shadow-lg"
       />
       <button
         onClick={() => {
