@@ -27,6 +27,7 @@ function Task({ task, onChange, onDelete }) {
     taskContent = (
       <>
         <input
+          class="py-2 w-32 rounded"
           value={task.text}
           onChange={e => {
             onChange({
@@ -36,14 +37,14 @@ function Task({ task, onChange, onDelete }) {
           }} />
         <button onClick={() => setIsEditing(false)}
         class="h-8 mx-1 text-white bg-blue-400 border-0 py-1 px-3 focus:outline-none hover:bg-blue-500 rounded text-lg shadow-lg">
-          Save
+          save
         </button>
       </>
     );
   } else {
     taskContent = (
       <>
-        <p class="text-left max-w-sm w-36 break-words">{task.text}</p>
+        <p class="text-left w-64 break-words">{task.text}</p>
         <button onClick={() => setIsEditing(true)}
         class="h-8 mx-1 text-white bg-blue-400 border-0 py-1 px-3 focus:outline-none hover:bg-blue-500 rounded text-lg shadow-lg">
           edit
@@ -53,7 +54,7 @@ function Task({ task, onChange, onDelete }) {
   }
   return (
     <label>
-      <div class="py-2 my-2 w-full flex items-center justify-between rounded border border-gray-200 dark:border-gray-200 bg-slate-100">
+      <div class="py-2 my-2 w-full flex items-center justify-between rounded border border-gray-200 dark:border-gray-200 bg-slate-100 shadow-lg">
         <input
           type="checkbox"
           class="m-4 w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-100 focus:ring-blue-100 dark:focus:ring-blue-100 dark:ring-offset-gray-100 focus:ring-2 dark:bg-gray-100 dark:border-gray-100"
