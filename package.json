@@ -8,12 +8,13 @@
     "studio:deploy": "npx vercel env pull && npm --prefix studio run deploy"
   },
   "dependencies": {
-    "@portabletext/react": "^1.0.6",
+    "@formkit/drag-and-drop": "^0.0.38",
+    "@portabletext/react": "^3.0.7",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^2.0.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
-    "next": "latest",
+    "next": "^12.3.4",
     "next-sanity": "^0.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
