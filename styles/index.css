@@ -24,3 +24,12 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.5s ease;
 }
 
+.item-edit-buttons::before {
+    content: '';
+    position: absolute;
+    background: black;
+    opacity: 0.3;
+    height: 100px;
+    width: 130%;
+    margin: 19px -25px;
+}
