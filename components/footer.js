@@ -1,22 +1,21 @@
-import Container from './container'
 import Link from 'next/link'
 
 export default function Footer() {
   return (
     <footer>
-      <Container>
-        <div className="mt-96 ml-1/2 flex flex-col lg:flex-row items-center absolute z-[1]">
-          <h2 className="no-text-shadow mb-10 text-6xl md:text-7xl font-bold tracking-tighter leading-tight font-serif text-white">
+        <div className="mt-12 ml-0 pt-6 flex flex-col lg:flex-row md:justify-around items-center absolute z-[1] bg-slate-900 w-full p-2">
+          <h2 className="no-text-shadow mb-10 text-2xl md:text-2xl font-bold tracking-tighter leading-tight font-serif text-white">
             <Link href="/">
               <a className="hover:text-teal-500">house of focus</a>
             </Link>
           </h2>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/ text-white">
-            your oasis in a world of distraction.
+          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/ text-slate-500">
+            a digital space for focus and productivity
+          </div>
+          <div className="justify-center items-center lg:pl-4 lg:w-1/ lg:align-right text-slate-500 text-xs">
+          Photo by <a href="https://unsplash.com/@augustinewong?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Augustine Wong</a> on <a href="https://unsplash.com/photos/silhouette-of-palm-tree-T0BYurbDK_M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
           </div>
         </div>
-      </Container>
-      <div className="bg-slate-900 w-full h-screen z-1 relative"></div>
     </footer>
   )
 }
