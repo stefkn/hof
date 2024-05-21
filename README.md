@@ -1,3 +1,21 @@
+# hof - House of Focus webapp
+
+## Quickstart
+```
+$ npx vercel link 
+$ npx vercel env pull 
+$ npm --prefix studio run cors:add -- http://localhost:3000 --credentials
+$ cd studio && npm run studio:dev
+
+# Sanity Studio should now be up and running locally. Now we just need to run the webapp 
+# open a new CLI session (keeping the one running Sanity open)
+
+$ npm install 
+$ npm run dev 
+
+# everything should now be running! Visit the site at http://localhost:3000
+```
+
 # A statically generated blog example using Next.js and Sanity
 
 This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Sanity](https://www.sanity.io/) as the data source.
