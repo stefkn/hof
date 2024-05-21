@@ -24,18 +24,6 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Container>
           <Intro />
 
-          <div className="mb-10">
-            <p>
-              Welcome to <b>house of focus.</b>
-            </p>
-            <p>
-              This is where you will find articles by house of focus staff and guest contributors.
-            </p>
-            <b>
-              For those who Do.
-            </b>
-          </div>
-
           {heroPost && (
             <HeroPost
               title={heroPost.title}
