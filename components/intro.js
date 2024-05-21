@@ -38,7 +38,7 @@ export default function Intro() {
             md:pl-8
             md:mt-20
           ">
-            Live right in your mind.
+            a digital space for focus and productivity
           </h4>
         </div>
     </section>
