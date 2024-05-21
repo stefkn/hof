@@ -1,11 +1,9 @@
 import '../styles/index.css'
-import BackgroundImage from '../components/bg-image'
 // import App from 'next/app'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <BackgroundImage />
     <Component {...pageProps} />
     </>
   )
