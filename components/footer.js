@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer>
-        <div className="mt-12 ml-0 pt-6 flex flex-col lg:flex-row md:justify-around items-center absolute z-[1] bg-slate-900 w-full p-2">
+        <div className="mt-12 ml-0 pt-6 flex flex-col lg:flex-row md:justify-around items-center absolute z-[1] w-full p-2 bg-slate-900/[.77] backdrop-blur-[12px]">
           <h2 className="no-text-shadow mb-10 text-2xl md:text-2xl font-bold tracking-tighter leading-tight font-serif text-white">
             <Link href="/">
               <a className="hover:text-teal-500">house of focus</a>
