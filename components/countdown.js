@@ -8,7 +8,7 @@ const STATUS = {
 
 const INITIAL_COUNT = 1500
 
-export default function CountdownApp() {
+export default function Countdown({disabled}) {
   const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT)
   const [status, setStatus] = useState(STATUS.STOPPED)
   const [percentageElapsed, setpercentageElapsed] = useState(0)
@@ -20,14 +20,10 @@ export default function CountdownApp() {
 
   const handleStart = () => {
     setStatus(STATUS.STARTED)
-    document.getElementById('bg-image').style.opacity = 0.5
-    document.getElementById('logo').style.opacity = 0.3
   }
 
   const handleStop = () => {
     setStatus(STATUS.STOPPED)
-    document.getElementById('bg-image').style.opacity = 1
-    document.getElementById('logo').style.opacity = 1
   }
 
   const handleReset = () => {
@@ -44,8 +40,6 @@ export default function CountdownApp() {
       } else {
         setStatus(STATUS.STOPPED)
         setpercentageElapsed(100)
-        document.getElementById('bg-image').style.opacity = 1
-        document.getElementById('logo').style.opacity = 1
       }
     },
     status === STATUS.STARTED ? 1000 : null,
