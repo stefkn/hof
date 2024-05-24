@@ -70,17 +70,17 @@ export default function Countdown({disabled}) {
           <h2 className="text-xl font-bold ml-6 mx-auto pr-2 mb-2 font-serif flex-0 dark:text-gray-100">{status}</h2>
         </div>
 
-      </div>
-      <div class="w-80 mx-auto text-center z-10 relative">
-        <button onClick={handleStart} type="button" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg" style={{backgroundColor: status === STATUS.STARTED ? 'grey' : 'rgb(34 197 94 / var(--tw-bg-opacity))'}}>
-            start
-        </button>
-        <button onClick={handleStop} type="button" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg" style={{backgroundColor: status === STATUS.STOPPED ? 'grey' : 'rgb(34 197 94 / var(--tw-bg-opacity))'}}>
-            stop
-        </button>
-        <button onClick={handleReset} type="button" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg">
-            reset
-        </button>
+        <div className="mx-auto z-10 relative">
+          <button onClick={handleStart} disabled={disabled} type="button" className="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg" style={{backgroundColor: ((status === STATUS.STARTED) || disabled) ? 'grey' : 'rgb(34 197 94 / var(--tw-bg-opacity))'}}>
+              start
+          </button>
+          <button onClick={handleStop} type="button" className="inline-flex text-white bg-green-500 border-0 py-2 px-6 mr-4 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg" style={{backgroundColor: status === STATUS.STOPPED ? 'grey' : 'rgb(34 197 94 / var(--tw-bg-opacity))'}}>
+              stop
+          </button>
+          <button onClick={handleReset} type="button" className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg shadow-lg">
+              reset
+          </button>
+        </div>
       </div>
     </div>
   )
