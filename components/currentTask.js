@@ -95,6 +95,27 @@ export default function CurrentTask({ focusTask, focus, setFocus, kanbanItemMeth
                             <Countdown disabled={focus.length === 0} />
                         </div>
                     </div>
+                    <div
+                        className={"p-4 bg-white rounded-lg md:p-8 dark:bg-slate-900/70 " + (openTab === timeTrackingTab ? '' : 'hidden')}
+                        id="time-tracking"
+                        role="tabpanel"
+                        aria-labelledby="time-tracking-tab"
+                    >
+                        <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                            time tracking
+                        </h2>
+                    </div>
+                    <div
+                        className={"p-4 bg-white rounded-lg md:p-8 dark:bg-slate-900/70 " + (openTab === statisticsTab ? '' : 'hidden')}
+                        id="statistics"
+                        role="tabpanel"
+                        aria-labelledby="statistics-tab"
+                    >
+                        <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                            statistics
+                        </h2>
+                    </div>
+                </div>
             </div>
         </div>
     )
