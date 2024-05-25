@@ -132,6 +132,16 @@ export default function Kanban({ kanbanItems }) {
   }
 
 
+  function generateKey(prefix) {
+    return `${prefix}_${new Date().getTime()}`;
+  }
+
+  const kanbanItemMethods = {
+    deleteItem: deleteItem,
+    progressItem: progressItem,
+    updateItem: updateItem,
+  }
+
   return (
     <div>
     </div>
