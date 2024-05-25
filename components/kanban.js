@@ -144,6 +144,25 @@ export default function Kanban({ kanbanItems }) {
 
   return (
     <div>
+      <div className="flex flex-col md:flex-row lg:flex-row md:divide-x lg:divide-x divide-slate-600 overflow-x-scroll backdrop-blur-[22px] border-gray-500 border w-auto mx-3 p-2 py-6 rounded-lg md:mx-6 backdrop-brightness-[1.2] backdrop-contrast-[0.85]">
+        <div className="flex flex-col md:w-1/2 mx-2">
+          <h2 className="text-xl font-bold mx-4">
+            to do
+            {todos.length > 0 && (
+              <span className="inline-flex items-center justify-center w-6 h-6 ms-2 text-lg font-semibold text-blue-800 bg-blue-200 rounded-full">
+                {todos.length}
+              </span>
+            )}
+          </h2>
+          <ul ref={todoList} className="p-4">
+            {todos.map((todo, index) => (
+              <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} />
+            ))}
+          </ul>
+          <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
+            onClick={() => addNewItem(todo)}>
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
+      </div>
     </div>
   )
 }
