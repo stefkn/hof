@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import Kanban from '../components/kanban'
 import Image from 'next/image'
 
+import LeavesBackgroundImages from '../public/leaves.jpg'
+
 export default function Index() {
   return (
     <>
@@ -14,12 +16,14 @@ export default function Index() {
 
         <div className="fixed z-[-1] w-full h-full top-0">
           <Image
-            src="/leaves.jpg"
+            src={LeavesBackgroundImages}
             alt="Picture of palm tree shadows on a wall"
             quality={100}
             layout="fill"
             className='brightness-[1.1] contrast-[0.7] z-[-1] saturation-[1.6] object-cover opacity-0'
             onLoad={(e) => {e.target.style.opacity=1}}
+            placeholder='blur'
+            priority={true}
           />
         </div>
 

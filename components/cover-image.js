@@ -19,6 +19,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
         src={urlForImage(source).height(1000).width(2000).url()}
         sizes="100vw"
         priority={priority}
+        placeholder='blur'
       />
     </div>
   ) : (
