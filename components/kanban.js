@@ -185,6 +185,25 @@ export default function Kanban({ kanbanItems }) {
           </div>
         </div>
 
+        <div className="flex flex-col md:w-1/2 mx-2">
+          <h2 className="text-xl font-bold mx-4">
+            done
+            {dones.length > 0 && (
+              <span className="inline-flex items-center justify-center w-6 h-6 ms-2 text-lg font-semibold text-teal-800 bg-teal-300 rounded-full">
+                {dones.length}
+              </span>
+            )}
+          </h2>
+          <ul ref={doneList} className="p-4">
+            {dones.map((doneTask, index) => (
+              <KanbanItem key={doneTask.id} task={doneTask} kanbanItemMethods={kanbanItemMethods} style={done} />
+            ))}
+          </ul>
+          <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
+            onClick={() => addNewItem(done)}>
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
+          </div>
+        </div>
       </div>
     </div>
   )
