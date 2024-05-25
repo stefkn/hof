@@ -162,6 +162,29 @@ export default function Kanban({ kanbanItems }) {
           <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
             onClick={() => addNewItem(todo)}>
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:w-1/2 mx-2">
+          <h2 className="text-xl font-bold mx-4">
+            in progress
+            {inProgs.length > 0 && (
+              <span className="inline-flex items-center justify-center w-6 h-6 ms-2 text-lg font-semibold text-blue-800 bg-blue-200 rounded-full">
+                {inProgs.length}
+              </span>
+            )}
+          </h2>
+          <ul ref={inProgressList} className="p-4">
+            {inProgs.map((inprog, index) => (
+              <KanbanItem key={inprog.id} task={inprog} kanbanItemMethods={kanbanItemMethods} />
+            ))}
+          </ul>
+          <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
+            onClick={() => addNewItem(inProgress)}>
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
+          </div>
+        </div>
+
       </div>
     </div>
   )
