@@ -45,6 +45,20 @@ export default function Kanban({ kanbanItems }) {
     }
   }
 
+  function deleteItem(id) {
+    return () => {
+      // TODO: refactor this to use a single state object
+      const newTodos = todos.filter(todo => todo.id !== id);
+      const newInProgs = inProgs.filter(inprog => inprog.id !== id);
+      const newDones = dones.filter(done => done.id !== id);
+      const newFocus = focus.filter(focus => focus.id !== id);
+      setTodos(newTodos);
+      setInProgs(newInProgs);
+      setDones(newDones);
+      setFocus(newFocus);
+    }
+  }
+
 
   return (
     <div>
