@@ -59,6 +59,29 @@ export default function Kanban({ kanbanItems }) {
     }
   }
 
+  function progressItem(id) {
+    // TODO: refactor this to use a single state object
+    return () => {
+      const todo = todos.find(todo => todo.id === id);
+      const inProg = inProgs.find(inprog => inprog.id === id);
+      const done = dones.find(done => done.id === id);
+      const focusItem = focus.find(focus => focus.id === id);
+      if (todo) {
+        setTodos(todos.filter(todo => todo.id !== id));
+        setInProgs([...inProgs, todo]);
+      } else if (inProg) {
+        setInProgs(inProgs.filter(inprog => inprog.id !== id));
+        setDones([...dones, inProg]);
+      } else if (done) {
+        setDones(dones.filter(done => done.id !== id));
+        setTodos([...todos, done]);
+      } else if (focusItem) {
+        setFocus(focus.filter(focus => focus.id !== id));
+        setDones([...dones, focusItem]);
+      }
+    }
+  }
+
 
   return (
     <div>
