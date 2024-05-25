@@ -24,6 +24,28 @@ export default function Kanban({ kanbanItems }) {
     }
   });
 
+  function addNewItem(type) {
+    const currentIndex = todos.length + inProgs.length + dones.length + focus.length + 1;
+    const newTodo = {
+      id: generateKey(currentIndex),
+      title: `New Item ${currentIndex}`,
+      description: 'Description',
+    };
+    if (!newTodo) { return; }
+    switch (type) {
+      case todo:
+        setTodos([...todos, newTodo]);
+        return;
+      case inProgress:
+        setInProgs([...inProgs, newTodo]);
+        return;
+      case done:
+        setDones([...dones, newTodo]);
+        return;
+    }
+  }
+
+
   return (
     <div>
     </div>
