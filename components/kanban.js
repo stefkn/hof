@@ -82,6 +82,55 @@ export default function Kanban({ kanbanItems }) {
     }
   }
 
+  function updateItem(id, title, description) {
+    return () => {
+      const newTodos = todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            title,
+            description,
+          }
+        }
+        return todo;
+      });
+      const newInProgs = inProgs.map(inprog => {
+        if (inprog.id === id) {
+          return {
+            ...inprog,
+            title,
+            description,
+          }
+        }
+        return inprog;
+      });
+      const newDones = dones.map(done => {
+        if (done.id === id) {
+          return {
+            ...done,
+            title,
+            description,
+          }
+        }
+        return done;
+      });
+      const newFocus = focus.map(focus => {
+        if (focus.id === id) {
+          return {
+            ...focus,
+            title,
+            description,
+          }
+        }
+        return focus;
+      });
+      setTodos(newTodos);
+      setInProgs(newInProgs);
+      setDones(newDones);
+      setFocus(newFocus);
+    }
+  }
+
 
   return (
     <div>
