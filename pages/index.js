@@ -20,8 +20,7 @@ export default function Index() {
             alt="Picture of palm tree shadows on a wall"
             quality={100}
             layout="fill"
-            className='brightness-[1.1] contrast-[0.7] z-[-1] saturation-[1.6] object-cover opacity-0'
-            onLoad={(e) => {e.target.style.opacity=1}}
+            className='brightness-[1.1] contrast-[0.7] z-[-1] saturation-[1.6] object-cover'
             placeholder='blur'
             priority={true}
           />
