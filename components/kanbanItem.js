@@ -17,6 +17,20 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
             setIsDraggable(!isDraggable);
         }
     }
+
+    function toggleEditable() {
+        setIsEditable(!isEditable);
+        setIsDraggable(!isDraggable);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const title = e.target.title.value;
+        const description = e.target.description.value;
+        kanbanItemMethods.updateItem(task.id, title, description)();
+        toggleOpenItem(task.id)();
+    }
+
     return (
         <div className={isDraggable ? "" : "no-drag"} draggable={isDraggable ? "true" : "false"}>
             <div
