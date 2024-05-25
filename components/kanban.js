@@ -144,6 +144,7 @@ export default function Kanban({ kanbanItems }) {
 
   return (
     <div>
+      <CurrentTask focusTask={focusTask} focus={focus} setFocus={setFocus} kanbanItemMethods={kanbanItemMethods} />
       <div className="flex flex-col md:flex-row lg:flex-row md:divide-x lg:divide-x divide-slate-600 overflow-x-scroll backdrop-blur-[22px] border-gray-500 border w-auto mx-3 p-2 py-6 rounded-lg md:mx-6 backdrop-brightness-[1.2] backdrop-contrast-[0.85]">
         <div className="flex flex-col md:w-1/2 mx-2">
           <h2 className="text-xl font-bold mx-4">
