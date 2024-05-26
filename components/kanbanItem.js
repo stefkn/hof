@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import KanbanItemModal from './kanbanItemModal';
 
 export default function KanbanItem({ task, kanbanItemMethods, style }) {
     // thanks to https://stackoverflow.com/a/52855084
@@ -43,67 +44,7 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
     return (
         <div className={isDraggable ? "" : "no-drag"} draggable={isDraggable ? "true" : "false"}>
             {isOpen ? (
-                <div
-                    id="default-modal"
-                    tabIndex={-1}
-                    className="bg-slate-600/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-full max-h-full"
-                >
-                    <div className="relative p-4 w-full max-w-2xl max-h-full m-auto mt-24">
-                        <form onSubmit={handleSubmit} className="relative bg-white rounded-lg shadow-2xl dark:bg-gray-800">
-                            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                                <input defaultValue={task.title} type="text" id="title" className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
-                                <button
-                                    type="button"
-                                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                    onClick={toggleOpenItem(task.id)}
-                                >
-                                    <svg
-                                        className="w-3 h-3"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 14 14"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                        />
-                                    </svg>
-                                    <span className="sr-only">Close modal</span>
-                                </button>
-                            </div>
-
-                            <div className="p-4 md:p-5 space-y-4">
-                                <div className="max-w-xl mx-auto">
-                                    <textarea id="description" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        defaultValue={task.description}></textarea>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                                <button
-                                    data-modal-hide="default-modal"
-                                    type="submit"
-                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                >
-                                    Save
-                                </button>
-                                <button
-                                    data-modal-hide="default-modal"
-                                    type="button"
-                                    onClick={toggleOpenItem(task.id)}
-                                    className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+                <KanbanItemModal task={task} kanbanItemMethods={kanbanItemMethods} toggleOpenItem={toggleOpenItem} />
             ) : (null)}
             <div
                 className={"block max-w-2xl p-6 mb-2 bg-white border overflow-hidden border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 " + (styleConfig[style] || "")}
