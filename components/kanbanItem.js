@@ -1,10 +1,19 @@
 import { useState } from 'react';
 
 export default function KanbanItem({ task, kanbanItemMethods, style }) {
+    // thanks to https://stackoverflow.com/a/52855084
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches
 
     const [isOpen, setIsOpen] = useState(false);
     const [isEditable, setIsEditable] = useState(false);
-    const [isDraggable, setIsDraggable] = useState(true);
+    const [isDraggable, setIsDraggable] = useState(isTouchDevice ? false : true);
+
+    function setIsDraggableIfNotTouch(value) {
+        if (isTouchDevice) {
+            return;
+        }
+        setIsDraggable(value);
+    }
 
     const styleConfig = {
         done: 'bg-teal-100 dark:bg-teal-800 hover:bg-teal-200 dark:hover:bg-teal-800',
@@ -14,13 +23,13 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
     function toggleOpenItem(id) {
         return () => {
             setIsOpen(!isOpen);
-            setIsDraggable(!isDraggable);
+            setIsDraggableIfNotTouch(!isDraggable);
         }
     }
 
     function toggleEditable() {
         setIsEditable(!isEditable);
-        setIsDraggable(!isDraggable);
+        setIsDraggableIfNotTouch(!isDraggable);
     }
 
     function handleSubmit(e) {
