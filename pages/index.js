@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Container from '../components/container'
 import Layout from '../components/layout'
-import Kanban from '../components/kanban'
+import Kanban from '../components/kanban/kanban'
 import Image from 'next/image'
 
 import LeavesBackgroundImages from '../public/leaves.jpg'
