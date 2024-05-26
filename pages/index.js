@@ -22,7 +22,6 @@ export default function Index() {
             layout="fill"
             className='brightness-[1.1] contrast-[0.7] z-[-1] saturation-[1.6]'
             placeholder='blur'
-            priority={true}
           />
         </div>
 
