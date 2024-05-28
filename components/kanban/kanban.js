@@ -12,34 +12,42 @@ import {
 import { ADD_TASK, REMOVE_TASK, UPDATE_TASK } from '../../lib/state/actions';
 
 export default function Kanban({ kanbanItems }) {
-  const todo = 'todo'
-  const inProgress = 'in-progress'
-  const done = 'done'
+  const [tasks, dispatch] = useReducer(tasksReducer, []);
+  const [taskNum, setTaskNum] = useState(1);
 
+  // formkit drag and drop configuration
   const config = {
     group: "todoList",
     sortable: true,
     draggable: (el) => !el.classList.contains("no-drag"),
+    // custom handleEnd function to update tasks via reducer to keep state in sync
+    handleEnd(event) {
+      const taskId = event.targetData.node.data.value.id;
+      const newStatus = event.targetData.parent.el.id;
+      updateTaskStatus(taskId, newStatus);
+    }
   }
 
+  // formkit drag and drop hooks
   const [todoList, todos, setTodos] = useDragAndDrop([], config);
   const [inProgressList, inProgs, setInProgs] = useDragAndDrop([], config);
   const [doneList, dones, setDones] = useDragAndDrop([], config);
   const [focusTask, focus, setFocus] = useDragAndDrop([], {
     ...config,
     accepts: (_parent, lastParent) => {
+      // only one task can be in focus at a time
       return focus.length === 0;
     }
   });
 
-  function addNewItem(type) {
-    const currentIndex = todos.length + inProgs.length + dones.length + focus.length + 1;
-    const newTodo = {
-      id: generateKey(currentIndex),
-      title: `New Item ${currentIndex}`,
-      description: 'Description',
-    };
-    if (!newTodo) { return; }
+  useEffect(() => {
+    // update the formkit drag and drop lists when tasks change
+    setTodos(tasks.filter(task => task.status === TASK_STATUS_TODO));
+    setInProgs(tasks.filter(task => task.status === TASK_STATUS_IN_PROGRESS));
+    setDones(tasks.filter(task => task.status === TASK_STATUS_DONE));
+    setFocus(tasks.filter(task => task.status === TASK_STATUS_FOCUS));
+  }, [tasks]);
+
   function addNewItem(status = TASK_STATUS_TODO) {
     dispatch({
       type: ADD_TASK,
