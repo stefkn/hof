@@ -1,7 +1,15 @@
-import React from 'react';
+import { useReducer, useEffect, useState } from 'react';
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import KanbanItem from './kanbanItem';
 import CurrentTask from './currentTask';
+import tasksReducer from '../../lib/state/tasksReducer';
+import {
+  TASK_STATUS_TODO,
+  TASK_STATUS_IN_PROGRESS,
+  TASK_STATUS_DONE,
+  TASK_STATUS_FOCUS,
+} from '../../lib/state/taskStatuses';
+import { ADD_TASK, REMOVE_TASK, UPDATE_TASK } from '../../lib/state/actions';
 
 export default function Kanban({ kanbanItems }) {
   const todo = 'todo'
@@ -155,13 +163,13 @@ export default function Kanban({ kanbanItems }) {
               </span>
             )}
           </h2>
-          <ul ref={todoList} className="p-4">
+          <ul id={TASK_STATUS_TODO} ref={todoList} className="p-4 pb-12 min-h-32 bg-gray-400/30 max-w-2xl mx-2 ml-4 my-4 rounded-lg">
             {todos.map((todo, index) => (
               <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} />
             ))}
           </ul>
           <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
-            onClick={() => addNewItem(todo)}>
+            onClick={() => addNewItem(TASK_STATUS_TODO)}>
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
           </div>
         </div>
@@ -175,13 +183,13 @@ export default function Kanban({ kanbanItems }) {
               </span>
             )}
           </h2>
-          <ul ref={inProgressList} className="p-4">
+          <ul id={TASK_STATUS_IN_PROGRESS} ref={inProgressList} className="p-4 pb-12 min-h-32 bg-gray-400/30 max-w-2xl mx-2 ml-4 my-4 rounded-lg">
             {inProgs.map((inprog, index) => (
               <KanbanItem key={inprog.id} task={inprog} kanbanItemMethods={kanbanItemMethods} />
             ))}
           </ul>
           <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
-            onClick={() => addNewItem(inProgress)}>
+            onClick={() => addNewItem(TASK_STATUS_IN_PROGRESS)}>
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
           </div>
         </div>
@@ -195,13 +203,13 @@ export default function Kanban({ kanbanItems }) {
               </span>
             )}
           </h2>
-          <ul ref={doneList} className="p-4">
+          <ul id={TASK_STATUS_DONE} ref={doneList} className="p-4 pb-12 min-h-32 bg-teal-400/30 max-w-2xl mx-2 ml-4 my-4 rounded-lg">
             {dones.map((doneTask, index) => (
-              <KanbanItem key={doneTask.id} task={doneTask} kanbanItemMethods={kanbanItemMethods} style={done} />
+              <KanbanItem key={doneTask.id} task={doneTask} kanbanItemMethods={kanbanItemMethods} style={'done'} />
             ))}
           </ul>
           <div className="no-drag block max-w-2xl p-3 pl-4 mx-2 ml-4 mb-6 border-2 border-dotted border-gray-400 rounded-lg shadow hover:bg-gray-200 cursor-pointer bg-gray-300"
-            onClick={() => addNewItem(done)}>
+            onClick={() => addNewItem(TASK_STATUS_DONE)}>
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">add new item</h5>
           </div>
         </div>
