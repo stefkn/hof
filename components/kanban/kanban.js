@@ -67,30 +67,37 @@ export default function Kanban({ kanbanItems }) {
     }
   }
 
-  function progressItem(id) {
-    // TODO: refactor this to use a single state object
-    return () => {
-      const todo = todos.find(todo => todo.id === id);
-      const inProg = inProgs.find(inprog => inprog.id === id);
-      const done = dones.find(done => done.id === id);
-      const focusItem = focus.find(focus => focus.id === id);
-      if (todo) {
-        setTodos(todos.filter(todo => todo.id !== id));
-        setInProgs([...inProgs, todo]);
-      } else if (inProg) {
-        setInProgs(inProgs.filter(inprog => inprog.id !== id));
-        setDones([...dones, inProg]);
-      } else if (done) {
-        setDones(dones.filter(done => done.id !== id));
-        setTodos([...todos, done]);
-      } else if (focusItem) {
-        setFocus(focus.filter(focus => focus.id !== id));
-        setDones([...dones, focusItem]);
+  function updateTaskStatus(id, status) {
+    const taskToUpdate = tasks.find(task => task.id === id)
+
+    if (!taskToUpdate) return;
+
+    dispatch({
+      type: UPDATE_TASK,
+      task: {
+        id: id,
+        status: status,
+        title: taskToUpdate.title,
+        description: taskToUpdate.description,
       }
-    }
+    });
   }
 
   function updateItem(id, title, description) {
+    const taskToUpdate = tasks.find(task => task.id === id)
+
+    if (!taskToUpdate) return;
+
+    dispatch({
+      type: UPDATE_TASK,
+      task: {
+        id: id,
+        status: taskToUpdate.status,
+        title: title,
+        description: description,
+      }
+    });
+  }
 
   function progressItem(id) {
     const taskToUpdate = tasks.find(task => task.id === id)
