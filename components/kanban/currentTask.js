@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import KanbanItem from './kanbanItem';
 import Countdown from './countdown';
+import { TASK_STATUS_FOCUS } from '../../lib/state/taskStatuses';
 
 export default function CurrentTask({ focusTask, focus, setFocus, kanbanItemMethods }) {
-
     const focusTaskTab = 'focus-task'
     const timeTrackingTab = 'time-tracking'
     const statisticsTab = 'statistics'
@@ -78,9 +78,9 @@ export default function CurrentTask({ focusTask, focus, setFocus, kanbanItemMeth
                                     Welcome! Create and drag a task here, or use the focus button on a task, to get started.
                                 </p>
                             )}
-                            <ul ref={focusTask}>
+                            <ul id={TASK_STATUS_FOCUS} ref={focusTask}>
                                 {focus.map((todo, index) => (
-                                    <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} style={'expanded'} /> 
+                                    <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} style={'expandedFocused'} /> 
                                 ))}
                                 {focus.length === 0 && (
                                     <div className="no-drag block max-w-2xl p-3 pl-4 m-0 border-2 border-dotted border-gray-400 rounded-lg shadow">
