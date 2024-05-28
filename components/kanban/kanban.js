@@ -91,54 +91,42 @@ export default function Kanban({ kanbanItems }) {
   }
 
   function updateItem(id, title, description) {
-    return () => {
-      const newTodos = todos.map(todo => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            title,
-            description,
-          }
-        }
-        return todo;
-      });
-      const newInProgs = inProgs.map(inprog => {
-        if (inprog.id === id) {
-          return {
-            ...inprog,
-            title,
-            description,
-          }
-        }
-        return inprog;
-      });
-      const newDones = dones.map(done => {
-        if (done.id === id) {
-          return {
-            ...done,
-            title,
-            description,
-          }
-        }
-        return done;
-      });
-      const newFocus = focus.map(focus => {
-        if (focus.id === id) {
-          return {
-            ...focus,
-            title,
-            description,
-          }
-        }
-        return focus;
-      });
-      setTodos(newTodos);
-      setInProgs(newInProgs);
-      setDones(newDones);
-      setFocus(newFocus);
-    }
-  }
 
+  function progressItem(id) {
+    const taskToUpdate = tasks.find(task => task.id === id)
+
+    if (!taskToUpdate) return;
+
+    let newTaskState = null;
+
+    switch (taskToUpdate.status) {
+      case TASK_STATUS_TODO:
+        newTaskState = TASK_STATUS_IN_PROGRESS;
+        break;
+      case TASK_STATUS_IN_PROGRESS:
+        newTaskState = TASK_STATUS_DONE;
+        break;
+      case TASK_STATUS_DONE:
+        newTaskState = TASK_STATUS_DONE;
+        break;
+      case TASK_STATUS_FOCUS:
+        newTaskState = TASK_STATUS_DONE;
+        break;
+      default:
+        newTaskState = TASK_STATUS_IN_PROGRESS;
+        break;
+    }
+
+    dispatch({
+      type: UPDATE_TASK,
+      task: {
+        id: id,
+        status: newTaskState,
+        title: taskToUpdate.title,
+        description: taskToUpdate.description,
+      }
+    });
+  }
 
   function generateKey(prefix) {
     return `${prefix}_${new Date().getTime()}`;
