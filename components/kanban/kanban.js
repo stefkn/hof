@@ -40,31 +40,35 @@ export default function Kanban({ kanbanItems }) {
       description: 'Description',
     };
     if (!newTodo) { return; }
-    switch (type) {
-      case todo:
-        setTodos([...todos, newTodo]);
-        return;
-      case inProgress:
-        setInProgs([...inProgs, newTodo]);
-        return;
-      case done:
-        setDones([...dones, newTodo]);
-        return;
-    }
+  function addNewItem(status = TASK_STATUS_TODO) {
+    dispatch({
+      type: ADD_TASK,
+      task: {
+        id: generateKey(tasks.length + 1),
+        status: status,
+        title: 'New task ' + (taskNum),
+        description: 'This is the task description.',
+      }
+    });
+    setTaskNum(taskNum + 1);
   }
 
   function deleteItem(id) {
-    return () => {
-      // TODO: refactor this to use a single state object
-      const newTodos = todos.filter(todo => todo.id !== id);
-      const newInProgs = inProgs.filter(inprog => inprog.id !== id);
-      const newDones = dones.filter(done => done.id !== id);
-      const newFocus = focus.filter(focus => focus.id !== id);
-      setTodos(newTodos);
-      setInProgs(newInProgs);
-      setDones(newDones);
-      setFocus(newFocus);
-    }
+    dispatch({
+      type: REMOVE_TASK,
+      id: id,
+    });
+  }
+
+  function updateTask(id, newTask) {
+    const taskToUpdate = tasks.find(task => task.id === id)
+
+    if (!taskToUpdate) return;
+
+    dispatch({
+      type: UPDATE_TASK,
+      task: { ...newTask, id: id },
+    });
   }
 
   function updateTaskStatus(id, status) {
