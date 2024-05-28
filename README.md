@@ -1,7 +1,25 @@
-# hof - House of Focus webapp
+# House of Focus (hof) - React Webapp
+
+This is the webapp for the House of Focus project, which is a minimalistic Trello/JIRA kanban task management app with time tracking and analytics. It runs entirely on the client with no tracking or ads.
+
+The House uses:
+
+- ⚛️ Next.js for the frontend
+- 🗂️ Sanity.io for the CMS
+- 🔼 Vercel for deployment
+- 🌬️ Tailwind & Flowbite CSS for styling
+- 💾 LocalForage for data persistence
+- 🛹 formkit/drag-and-drop for (gasp) drag and drop
+- 🎞️ formkit/auto-animate for animations
+- ⏰ formkit/tempo for handling time
+- 📊 Chart.js for analytics
+- 🖍️ react-markdown for rendering Markdown
+- 🧪 vitest for unit tests
 
 ## Quickstart
-```
+
+```bash
+# set up local Vercel link and Sanity CMS
 $ npx vercel link 
 $ npx vercel env pull 
 $ npm --prefix studio run cors:add -- http://localhost:3000 --credentials
@@ -16,41 +34,7 @@ $ npm run dev
 # everything should now be running! Visit the site at http://localhost:3000
 ```
 
-# A statically generated blog example using Next.js and Sanity
-
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Sanity](https://www.sanity.io/) as the data source.
-
-You'll get:
-
-- Next.js deployed with the [Sanity Vercel Integration][integration].
-- Sanity Studio running on localhost and deployed in the [cloud](https://www.sanity.io/docs/deployment).
-- Sub-second as-you-type previews in Next.js
-- [On-demand revalidation of pages](https://nextjs.org/blog/next-12-1#on-demand-incremental-static-regeneration-beta) with [GROQ powered webhooks](https://www.sanity.io/docs/webhooks)
-
-## Demo
-
-### [https://next-blog-sanity.vercel.app](https://next-blog-sanity.vercel.app)
-
-## Related examples
-
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Ghost](/examples/cms-ghost)
-- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
-- [Blog Starter](/examples/blog-starter)
-- [Builder.io](/examples/cms-builder-io)
-
-# Configuration
+## Development
 
 - [Step 1. Set up the environment](#step-1-set-up-the-environment)
 - [Step 2. Configure CORS for localhost](#step-2-configure-cors-for-localhost)
