@@ -18,7 +18,8 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
 
     const styleConfig = {
         done: 'bg-teal-100 dark:bg-teal-800 hover:bg-teal-200 dark:hover:bg-teal-800',
-        expanded: 'bg-indigo-100 dark:bg-indigo-900 hover:bg-indigo-200 dark:hover:bg-indigo-800 min-w-full h-full'
+        expanded: 'bg-indigo-100 dark:bg-indigo-900 hover:bg-indigo-200 dark:hover:bg-indigo-800 min-w-full h-full',
+        expandedFocused: 'bg-indigo-100 dark:bg-indigo-900 hover:bg-indigo-200 dark:hover:bg-indigo-800 min-w-full h-full animation-pulse'
     }
 
     function toggleOpenItem(id) {
