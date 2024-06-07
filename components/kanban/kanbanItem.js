@@ -90,7 +90,7 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
                     <div className="relative mt-10 flex gap-2.5 justify-end z-10">
                         <button type="button" className="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
                             onClick={() => {kanbanItemMethods.focusItem(task.id)}}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                             <span className="sr-only">Move to Focus</span>
                         </button>
                         <button type="button" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
