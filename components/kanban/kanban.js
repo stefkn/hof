@@ -1,15 +1,23 @@
-import { useReducer, useEffect, useState } from 'react';
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
-import KanbanItem from './kanbanItem';
-import CurrentTask from './currentTask';
-import tasksReducer from '../../lib/state/tasksReducer';
 import {
   TASK_STATUS_TODO,
   TASK_STATUS_IN_PROGRESS,
   TASK_STATUS_DONE,
   TASK_STATUS_FOCUS,
 } from '../../lib/state/taskStatuses';
-import { ADD_TASK, REMOVE_TASK, UPDATE_TASK } from '../../lib/state/actions';
+import {
+  LOCAL_STORAGE_KEY,
+  ADD_TASK,
+  REMOVE_TASK,
+  UPDATE_TASK,
+  LOAD_TASKS
+} from '../../lib/state/actions';
+
+import { useReducer, useEffect, useState } from 'react';
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import KanbanItem from './kanbanItem';
+import CurrentTask from './currentTask';
+import tasksReducer from '../../lib/state/tasksReducer';
+import localforage from 'localforage';
 
 export default function Kanban({ kanbanItems }) {
   const [tasks, dispatch] = useReducer(tasksReducer, []);
@@ -41,12 +49,29 @@ export default function Kanban({ kanbanItems }) {
   });
 
   useEffect(() => {
+    console.log('tasks changed', tasks);
+    if (!tasks) return;
     // update the formkit drag and drop lists when tasks change
     setTodos(tasks.filter(task => task.status === TASK_STATUS_TODO));
     setInProgs(tasks.filter(task => task.status === TASK_STATUS_IN_PROGRESS));
     setDones(tasks.filter(task => task.status === TASK_STATUS_DONE));
     setFocus(tasks.filter(task => task.status === TASK_STATUS_FOCUS));
+
+    // save tasks to local storage
+    localforage.setItem(LOCAL_STORAGE_KEY, tasks).catch(function (err) {
+      console.log(err);
+    });
   }, [tasks]);
+
+  useEffect(() => {
+    // load tasks from local storage
+    localforage.getItem(LOCAL_STORAGE_KEY).then(tasks => {
+      if (tasks) {
+        console.log('loaded tasks from local storage', tasks);
+        dispatch({ type: LOAD_TASKS, tasks });
+      }
+    }).catch(function (err) { console.log(err); });
+  }, []);
 
   function addNewItem(status = TASK_STATUS_TODO) {
     dispatch({
