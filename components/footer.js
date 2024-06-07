@@ -5,8 +5,8 @@ export default function Footer() {
     <footer>
         <div className="mt-12 ml-0 pt-6 flex flex-col lg:flex-row md:justify-around items-center absolute z-[1] w-full p-2 bg-slate-900/[.77] backdrop-blur-[12px]">
           <h2 className="no-text-shadow mb-10 text-2xl md:text-2xl font-bold tracking-tighter leading-tight font-serif text-white">
-            <Link href="/">
-              <a className="hover:text-teal-500">house of focus</a>
+            <Link href="/" className="hover:text-teal-500">
+              house of focus
             </Link>
           </h2>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/ text-slate-500">
@@ -17,5 +17,5 @@ export default function Footer() {
           </div>
         </div>
     </footer>
-  )
+  );
 }

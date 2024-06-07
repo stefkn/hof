@@ -19,10 +19,10 @@ export default function Intro() {
             md:text-8xl
             md:pr-8
           ">
-            <Link href={`/`}>
-              <a className="hover:text-teal-500">
+            <Link href={`/`} className="hover:text-teal-500">
+              
                 house of focus
-              </a>
+              
             </Link>
           </h1>
         </div>
@@ -42,5 +42,5 @@ export default function Intro() {
           </h4>
         </div>
     </section>
-  )
+  );
 }

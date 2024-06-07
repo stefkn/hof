@@ -19,8 +19,8 @@ export default function HeroPost({
       <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28 z-[2] relative">
         <div className="z-[2] relative">
           <h3 className="mb-4 text-4xl leading-tight lg:text-6xl font-serif">
-            <Link href={`/posts/${slug}`}>
-              <a className="hover:underline">{title}</a>
+            <Link href={`/posts/${slug}`} className="hover:underline">
+              {title}
             </Link>
           </h3>
           <div className="mb-4 text-lg md:mb-0 z-[2] relative">
@@ -33,5 +33,5 @@ export default function HeroPost({
         </div>
       </div>
     </section>
-  )
+  );
 }
