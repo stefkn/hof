@@ -71,7 +71,7 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
                 )}
                 <div className="flex justify-between relative item-edit-buttons">
                     <div className="relative mt-10 mr-3 flex gap-2.5 justify-start z-10">
-                        <button type="button" className="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             onClick={toggleEditable}>
                             <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path fillRule="evenodd" d="M11.32 6.176H5c-1.105 0-2 .949-2 2.118v10.588C3 20.052 3.895 21 5 21h11c1.105 0 2-.948 2-2.118v-7.75l-3.914 4.144A2.46 2.46 0 0 1 12.81 16l-2.681.568c-1.75.37-3.292-1.263-2.942-3.115l.536-2.839c.097-.512.335-.983.684-1.352l2.914-3.086Z" clipRule="evenodd" />
@@ -79,14 +79,19 @@ export default function KanbanItem({ task, kanbanItemMethods, style }) {
                             </svg>
                             <span className="sr-only">Edit item</span>
                         </button>
-                    </div>
-                    <div className="relative mt-10 flex gap-2.5 justify-end z-10">
                         <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             onClick={toggleOpenItem(task.id)}>
                             <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 4h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5" />
                             </svg>
                             <span className="sr-only">Open item</span>
+                        </button>
+                    </div>
+                    <div className="relative mt-10 flex gap-2.5 justify-end z-10">
+                        <button type="button" className="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+                            onClick={() => {kanbanItemMethods.focusItem(task.id)}}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                            <span className="sr-only">Move to Focus</span>
                         </button>
                         <button type="button" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                             onClick={() => {kanbanItemMethods.progressItem(task.id)}}>
