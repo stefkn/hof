@@ -13,7 +13,7 @@ export default function Index() {
         <Image
           src={LeavesBackgroundImages}
           alt="Picture of palm tree shadows on a wall"
-          className='brightness-[1.1] contrast-[0.7] z-[-1] saturation-[1.6]'
+          className='brightness-[0.7] contrast-[0.54] z-[-1] hue-rotate-[-174deg] invert-[1] saturate-[2.2]'
           placeholder='blur'
         />
       </div>
