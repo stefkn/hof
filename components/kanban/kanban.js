@@ -120,6 +120,14 @@ export default function Kanban({ kanbanItems }) {
     });
   }
 
+  function focusItem(id) {
+    if (focus.length > 0) {
+      // remove the current focus task
+      updateTaskStatus(focus[0].id, TASK_STATUS_DONE);
+    }
+    updateTaskStatus(id, TASK_STATUS_FOCUS);
+  }
+
   function updateItem(id, title, description) {
     const taskToUpdate = tasks.find(task => task.id === id)
 
@@ -180,6 +188,7 @@ export default function Kanban({ kanbanItems }) {
     deleteItem: deleteItem,
     progressItem: progressItem,
     updateItem: updateItem,
+    focusItem: focusItem, 
   }
 
   return (
