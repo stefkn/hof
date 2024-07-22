@@ -43,3 +43,14 @@ h1, h2, h3, h4, h5, h6 {
         transform: scale(0.995);
     }
 }
+
+.kanban-handle {
+    display: inline-block;
+    margin: -5px -7px 10px 10px;
+    background: #304664;
+    border-radius: 6px;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    padding: 0.5rem;
+}
