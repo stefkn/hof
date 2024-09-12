@@ -33,7 +33,8 @@ export default function Kanban({ kanbanItems }) {
       const taskId = event.targetData.node.data.value.id;
       const newStatus = event.targetData.parent.el.id;
       updateTaskStatus(taskId, newStatus);
-    }
+    },
+    dragHandle: ".kanban-handle",
   }
 
   // formkit drag and drop hooks
