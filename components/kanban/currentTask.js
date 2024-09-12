@@ -9,6 +9,7 @@ export default function CurrentTask({ focusTask, focus, setFocus, kanbanItemMeth
     const statisticsTab = 'statistics'
 
     const [openTab, setOpenTab] = useState(focusTaskTab)
+    const [isFocusMode, setIsFocusMode] = useState(false)
 
     return (
         <div>
@@ -64,36 +65,68 @@ export default function CurrentTask({ focusTask, focus, setFocus, kanbanItemMeth
                 </ul>
                 <div id="defaultTabContent">
                     <div
-                        className={"p-4 bg-white rounded-lg md:p-8 dark:bg-slate-900/70 flex flex-col justify-between md:flex-row md:justify-between md:items-start " + (openTab === focusTaskTab ? '' : 'hidden')}
+                        className={"p-4 bg-white rounded-lg md:p-8 dark:bg-slate-900/70" + (openTab === focusTaskTab ? '' : 'hidden')}
                         id="focustask"
                         role="tabpanel"
                         aria-labelledby="focus-task-tab"
                     >
-                        <div className="w-full min-w-16 mr-8">
-                            <h5 className="mb-4 ml-0 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                focus task
-                            </h5>
-                            {focus.length === 0 && (
-                                <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
-                                    Welcome! Create and drag a task here, or use the focus button on a task, to get started.
-                                </p>
-                            )}
-                            <ul id={TASK_STATUS_FOCUS} ref={focusTask}>
-                                {focus.map((todo, index) => (
-                                    <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} style={'expandedFocused'} /> 
-                                ))}
-                                {focus.length === 0 && (
-                                    <div className="no-drag block max-w-2xl p-3 pl-4 m-0 border-2 border-dotted border-gray-400 rounded-lg shadow">
-                                        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">
-                                            focus task here
-                                        </h5>
-                                    </div>
-                                )}
-                            </ul>
-                        </div>
-                        <div className="w-full">
-                            <Countdown disabled={focus.length === 0} />
-                        </div>
+                        {isFocusMode ? (
+                            <div className="flex flex-col justify-between md:flex-row md:justify-between md:items-start">
+                                <div className="w-full min-w-16 mr-8">
+                                    <h5 className="mb-4 ml-0 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        focus task
+                                    </h5>
+                                    {focus.length === 0 && (
+                                        <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                                            Welcome! Create and drag a task here, or use the focus button on a task, to get started.
+                                        </p>
+                                    )}
+                                    <ul id={TASK_STATUS_FOCUS} ref={focusTask}>
+                                        {focus.map((todo, index) => (
+                                            <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} style={'expandedFocusedInFocusMode'} /> 
+                                        ))}
+                                        {focus.length === 0 && (
+                                            <div className="no-drag block max-w-2xl p-3 pl-4 m-0 border-2 border-dotted border-gray-400 rounded-lg shadow">
+                                                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">
+                                                    focus task here
+                                                </h5>
+                                            </div>
+                                        )}
+                                    </ul>
+                                </div>
+                                <div className="w-full">
+                                    <Countdown disabled={focus.length === 0} />
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col justify-between md:flex-row md:justify-between md:items-start">
+                                <div className="w-full min-w-16 mr-8">
+                                    <h5 className="mb-4 ml-0 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        focus task
+                                    </h5>
+                                    {focus.length === 0 && (
+                                        <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                                            Welcome! Create and drag a task here, or use the focus button on a task, to get started.
+                                        </p>
+                                    )}
+                                    <ul id={TASK_STATUS_FOCUS} ref={focusTask}>
+                                        {focus.map((todo, index) => (
+                                            <KanbanItem key={todo.id} task={todo} kanbanItemMethods={kanbanItemMethods} style={'expandedFocused'} /> 
+                                        ))}
+                                        {focus.length === 0 && (
+                                            <div className="no-drag block max-w-2xl p-3 pl-4 m-0 border-2 border-dotted border-gray-400 rounded-lg shadow">
+                                                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-500">
+                                                    focus task here
+                                                </h5>
+                                            </div>
+                                        )}
+                                    </ul>
+                                </div>
+                                <div className="w-full">
+                                    <Countdown disabled={focus.length === 0} />
+                                </div>
+                            </div>
+                        )}
                     </div>
                     <div
                         className={"p-4 bg-white rounded-lg md:p-8 dark:bg-slate-900/70 " + (openTab === timeTrackingTab ? '' : 'hidden')}
